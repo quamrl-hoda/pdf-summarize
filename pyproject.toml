@@ -1,0 +1,27 @@
+[project]
+name = "pdf-summarizer"
+version = "0.1.0"
+description = "Production-grade PDF summarizer CLI using map-reduce LLM pipeline"
+requires-python = ">=3.11"
+
+dependencies = [
+    "openai>=1.30.0",
+    "pdfplumber>=0.11.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-mock>=3.12.0",
+]
+
+[project.scripts]
+summarize = "summarize:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["summarize"]
